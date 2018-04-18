@@ -149,4 +149,10 @@ if(!function_exists('setFlashData'))
     }
 }
 
-?>
+if(!function_exists('admin_url'))
+{
+    function admin_url($uri = '', $protocol = NULL)
+    {
+        return base_url('admin/'.$uri);
+    }
+}

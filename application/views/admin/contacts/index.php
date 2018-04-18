@@ -2,23 +2,16 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> User Management
-        <small>Add, Edit, Delete</small>
+        <i class="fa fa-users"></i> Contact Management
+        <small>view</small>
       </h1>
     </section>
     <section class="content">
         <div class="row">
-            <div class="col-xs-12 text-right">
-                <div class="form-group">
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>addNew"><i class="fa fa-plus"></i> Add New</a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Users List</h3>
+                    <h3 class="box-title">Contacts List</h3>
                     <div class="box-tools">
                         <form action="<?php echo base_url() ?>userListing" method="POST" id="searchList">
                             <div class="input-group">
@@ -37,25 +30,22 @@
                       <th>Name</th>
                       <th>Email</th>
                       <th>Mobile</th>
-                      <th>Role</th>
                       <th class="text-center">Actions</th>
                     </tr>
                     <?php
-                    if(!empty($userRecords))
+                    if(!empty($contactRecords))
                     {
-                        foreach($userRecords as $record)
+                        foreach($contactRecords as $record)
                         {
                     ?>
                     <tr>
-                      <td><?php echo $record->userId ?></td>
+                      <td><?php echo $record->contactId ?></td>
                       <td><?php echo $record->name ?></td>
                       <td><?php echo $record->email ?></td>
                       <td><?php echo $record->mobile ?></td>
-                      <td><?php echo $record->role ?></td>
                       <td class="text-center">
-                          <a class="btn btn-sm btn-primary" href="<?= base_url().'login-history/'.$record->userId; ?>" title="Login history"><i class="fa fa-history"></i></a> | 
-                          <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOld/'.$record->userId; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                          <a class="btn btn-sm btn-danger deleteUser" href="#" data-userid="<?php echo $record->userId; ?>" title="Delete"><i class="fa fa-trash"></i></a>
+                          <a class="btn btn-sm btn-info" href="<?php echo admin_url('contact').'/view/'.$record->contactId; ?>" title="View"><i class="fa fa-eye"></i></a>
+                          <a class="btn btn-sm btn-danger deleteUser" href="#" data-userid="<?php echo $record->contactId; ?>" title="Delete"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                     <?php

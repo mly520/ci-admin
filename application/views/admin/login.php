@@ -18,7 +18,7 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b>CodeInsect</b><br>Admin System</a>
+        <a href="#"><b>DemoSite</b><br>Admin System</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Sign In</p>
@@ -49,7 +49,7 @@
             </div>
         <?php } ?>
         
-        <form action="<?php echo base_url(); ?>loginMe" method="post">
+        <form action="<?php echo base_url(); ?>admin/login/loginMe" method="post">
           <div class="form-group has-feedback">
             <input type="email" class="form-control" placeholder="Email" name="email" required />
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

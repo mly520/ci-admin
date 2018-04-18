@@ -24,7 +24,7 @@
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
     <script type="text/javascript">
-        var baseURL = "<?php echo base_url(); ?>";
+        var baseURL = "<?php echo admin_url(); ?>";
     </script>
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,7 +43,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>CI</b>AS</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>CodeInsect</b>AS</span>
+          <span class="logo-lg"><b>Demo</b>SITE</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -53,29 +53,29 @@
           </a>
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-              <li class="dropdown tasks-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                  <i class="fa fa-history"></i>
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="header"> Last Login : <i class="fa fa-clock-o"></i> <?= empty($last_login) ? "First Time Login" : $last_login; ?></li>
-                </ul>
-              </li>
+<!--              <li class="dropdown tasks-menu">-->
+<!--                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">-->
+<!--                  <i class="fa fa-history"></i>-->
+<!--                </a>-->
+<!--                <ul class="dropdown-menu">-->
+<!--                  <li class="header"> Last Login : <i class="fa fa-clock-o"></i> --><?//= empty($last_login) ? "First Time Login" : $last_login; ?><!--</li>-->
+<!--                </ul>-->
+<!--              </li>-->
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="<?php echo base_url(); ?>assets/dist/img/avatar.png" class="user-image" alt="User Image"/>
+<!--                  <img src="--><?php //echo base_url(); ?><!--assets/dist/img/avatar.png" class="user-image" alt="User Image"/>-->
                   <span class="hidden-xs"><?php echo $name; ?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
-                  <li class="user-header">
-                    <img src="<?php echo base_url(); ?>assets/dist/img/avatar.png" class="img-circle" alt="User Image" />
-                    <p>
-                      <?php echo $name; ?>
-                      <small><?php echo $role_text; ?></small>
-                    </p>
-                  </li>
+<!--                  <li class="user-header">-->
+<!--                    <img src="--><?php //echo base_url(); ?><!--assets/dist/img/avatar.png" class="img-circle" alt="User Image" />-->
+<!--                    <p>-->
+<!--                      --><?php //echo $name; ?>
+<!--                      <small>--><?php //echo $role_text; ?><!--</small>-->
+<!--                    </p>-->
+<!--                  </li>-->
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
@@ -97,57 +97,63 @@
         <section class="sidebar">
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
-            <li class="treeview">
-              <a href="<?php echo base_url(); ?>dashboard">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-plane"></i>
-                <span>New Task</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-ticket"></i>
-                <span>My Tasks</span>
-              </a>
-            </li>
+            <li class="header"> NAVIGATION</li>
+<!--            <li class="treeview">-->
+<!--              <a href="--><?php //echo base_url(); ?><!--dashboard">-->
+<!--                <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>-->
+<!--              </a>-->
+<!--            </li>-->
+<!--            <li class="treeview">-->
+<!--              <a href="#" >-->
+<!--                <i class="fa fa-plane"></i>-->
+<!--                <span>New Task</span>-->
+<!--              </a>-->
+<!--            </li>-->
+<!--            <li class="treeview">-->
+<!--              <a href="#" >-->
+<!--                <i class="fa fa-ticket"></i>-->
+<!--                <span>My Tasks</span>-->
+<!--              </a>-->
+<!--            </li>-->
             <?php
             if($role == ROLE_ADMIN || $role == ROLE_MANAGER)
             {
             ?>
-            <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-thumb-tack"></i>
-                <span>Task Status</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-upload"></i>
-                <span>Task Uploads</span>
-              </a>
-            </li>
+<!--            <li class="treeview">-->
+<!--              <a href="#" >-->
+<!--                <i class="fa fa-thumb-tack"></i>-->
+<!--                <span>Task Status</span>-->
+<!--              </a>-->
+<!--            </li>-->
+<!--            <li class="treeview">-->
+<!--              <a href="#" >-->
+<!--                <i class="fa fa-upload"></i>-->
+<!--                <span>Task Uploads</span>-->
+<!--              </a>-->
+<!--            </li>-->
             <?php
             }
             if($role == ROLE_ADMIN)
             {
             ?>
             <li class="treeview">
-              <a href="<?php echo base_url(); ?>userListing">
+              <a href="<?php echo admin_url(); ?>user/userListing">
                 <i class="fa fa-users"></i>
                 <span>Users</span>
               </a>
             </li>
             <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-files-o"></i>
-                <span>Reports</span>
-              </a>
+                <a href="<?php echo admin_url(); ?>contact">
+                    <i class="fa fa-list"></i>
+                    <span>Contacts</span>
+                </a>
             </li>
+<!--            <li class="treeview">-->
+<!--              <a href="#" >-->
+<!--                <i class="fa fa-files-o"></i>-->
+<!--                <span>Reports</span>-->
+<!--              </a>-->
+<!--            </li>-->
             <?php
             }
             ?>
