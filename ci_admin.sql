@@ -26,13 +26,29 @@ SET time_zone = "+00:00";
 -- Table structure for table `ci_sessions`
 --
 
-CREATE TABLE `ci_sessions` (
-  `session_id` varchar(40) NOT NULL DEFAULT '0',
-  `ip_address` varchar(45) NOT NULL DEFAULT '0',
-  `user_agent` varchar(120) NOT NULL,
-  `last_activity` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `user_data` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE `ci_sessions` (
+--   `session_id` varchar(40) NOT NULL DEFAULT '0',
+--   `ip_address` varchar(45) NOT NULL DEFAULT '0',
+--   `user_agent` varchar(120) NOT NULL,
+--   `last_activity` int(10) UNSIGNED NOT NULL DEFAULT '0',
+--   `user_data` text NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `ci_sessions` (
+        `id` varchar(40) NOT NULL,
+        `ip_address` varchar(45) NOT NULL,
+        `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+        `data` blob NOT NULL,
+        KEY `ci_sessions_timestamp` (`timestamp`)
+);
+-- // sess_match_ip = TRUE のとき
+-- ALTER TABLE ci_sessions ADD PRIMARY KEY (id, ip_address);
+--
+-- // sess_match_ip = FALSE のとき
+-- ALTER TABLE ci_sessions ADD PRIMARY KEY (id);
+--
+-- // 以前のプライマリキーを削除するとき（設定を変更するときに使います）
+-- ALTER TABLE ci_sessions DROP PRIMARY KEY;
 
 -- --------------------------------------------------------
 
