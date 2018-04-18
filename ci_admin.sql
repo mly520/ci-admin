@@ -41,14 +41,6 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
         `data` blob NOT NULL,
         KEY `ci_sessions_timestamp` (`timestamp`)
 );
--- // sess_match_ip = TRUE のとき
--- ALTER TABLE ci_sessions ADD PRIMARY KEY (id, ip_address);
---
--- // sess_match_ip = FALSE のとき
--- ALTER TABLE ci_sessions ADD PRIMARY KEY (id);
---
--- // 以前のプライマリキーを削除するとき（設定を変更するときに使います）
--- ALTER TABLE ci_sessions DROP PRIMARY KEY;
 
 -- --------------------------------------------------------
 
